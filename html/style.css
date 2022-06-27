@@ -796,7 +796,7 @@ p {
 
 .header-eight .header-image {
   transform: translateY(145px);
-  margin-left: -130px;
+  margin-left: -105px;
 }
 .header-eight .header-content .primary-btn {
   background: var(--primary);
@@ -890,7 +890,7 @@ p {
   margin-top: 40px;
 }
 .header-eight .primary-btn {
-  margin-right: 12px;
+  /* margin-right: 12px; */
   background-color: var(--primary);
   color: var(--white);
   border: 1px solid transparent;
