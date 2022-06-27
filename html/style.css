@@ -2018,7 +2018,8 @@ p {
 }
 
 .segment-one {
-  padding: 20px; display: block;
+  /* padding: 20px;  */
+  display: block;
 }
 
 .contact-section h2 {
@@ -2147,7 +2148,7 @@ p {
   }
 }
 .contact-section .contact-item-wrapper .contact-item .contact-content h4 {
-  font-size: 20px;
+  /* font-size: 20px; */
   color: var(--primary);
   margin-bottom: 10px;
 }
