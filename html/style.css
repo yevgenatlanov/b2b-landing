@@ -2154,7 +2154,7 @@ p {
 }
 
 .contact-form-wrapper {
-  padding: 50px 40px;
+  padding: 0px 50px 40px;
   background: var(--white);
   /* border: 1px solid var(--gray-4); */
   margin-left: 0px;
@@ -2165,6 +2165,11 @@ p {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
+
+.contact-form-wrapper .col-md-12 {
+  margin-bottom: 20px;
+}
+
 .contact-form-wrapper:hover {
   /* box-shadow: var(--shadow-4); */
 }
