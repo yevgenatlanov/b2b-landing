@@ -795,8 +795,8 @@ p {
 }
 
 .header-eight .header-image {
-  transform: translateY(165px);
-  margin-left: -75px;
+  transform: translateY(145px);
+  margin-left: -130px;
 }
 .header-eight .header-content .primary-btn {
   background: var(--primary);
@@ -821,7 +821,7 @@ p {
 }
 .header-eight .header-image img {
   width: 100%;
-  min-width: 800px;
+  min-width: 850px;
   border-radius: 8px;
 }
 .header-eight .header-content .primary-btn {
