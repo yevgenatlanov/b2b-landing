@@ -467,7 +467,7 @@
                 </div>
               </div>
             </div>
-            <form onsubmit="submitForm()" class="contact-form">
+            <form id="contact-form" class="contact-form" method="post">
               <div class="row">
                 <div class="col-md-12">
                   <input type="text" name="Standort" id="Standort" placeholder="Standort *" required />
@@ -805,7 +805,8 @@
     let navbarTogglerNine = document.querySelector(
       ".navbar-nine .navbar-toggler"
     );
-    navbarTogglerNine.addEventListener("click", function () {
+    
+    navbarTogglerNine && navbarTogglerNine.addEventListener("click", function () {
       navbarTogglerNine.classList.toggle("active");
     });
 
@@ -815,18 +816,27 @@
     let sidebarClose = document.querySelector(".sidebar-close .close");
 
 
-    function submitForm() {
-      console.log('submit form');
+    function submitForm(e) {
+      e.preventDefault();
+
+      const formDataDict = Object.fromEntries(new FormData(e.target).entries());
+
       var http = new XMLHttpRequest();
       var url = "http://localhost:8081/sendform";
       http.open("POST", url);
-      console.log(http)
+      http.setRequestHeader('Content-Type', 'application/json');
+      http.responseType = 'json';
+      
       http.onload = function() {
         console.log(this.responseText);
       };
 
+      http.send(JSON.stringify(formDataDict));
     }
 
+    const contactForm = document.getElementById('contact-form');
+
+    contactForm && contactForm.addEventListener('submit', submitForm);
 
 
     function changeLayout() {
@@ -841,19 +851,21 @@
       sideSegmentTwo[0].style.display = sideSegmentTwo[0].style.display === 'none' ? 'inline-block' : 'none';
     }
 
-    overlayLeft.addEventListener("click", function () {
+    overlayLeft && overlayLeft.addEventListener("click", function () {
       sidebarLeft.classList.toggle("open");
       overlayLeft.classList.toggle("open");
     });
-    sidebarClose.addEventListener("click", function () {
+
+    sidebarClose && sidebarClose.addEventListener("click", function () {
       sidebarLeft.classList.remove("open");
       overlayLeft.classList.remove("open");
     });
 
+
     // ===== navbar nine sideMenu
     let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
 
-    sideMenuLeftNine.addEventListener("click", function () {
+    sideMenuLeftNine && sideMenuLeftNine.addEventListener("click", function () {
       sidebarLeft.classList.add("open");
       overlayLeft.classList.add("open");
     });
