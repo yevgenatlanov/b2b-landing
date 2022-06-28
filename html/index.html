@@ -489,7 +489,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="button text-left rounded-buttons">
-                    <button type="submit" class="btn primary-btn rounded-full">
+                    <button type="submit" onClick="submitForm()" class="btn primary-btn rounded-full">
                       Absenden
                     </button>
                   </div>
@@ -814,6 +814,27 @@
     let overlayLeft = document.querySelector(".overlay-left");
     let sidebarClose = document.querySelector(".sidebar-close .close");
 
+
+    function submitForm() {
+      var http = new XMLHttpRequest();
+      var url =
+        "https://api.eu.mailgun.net/v3/b2bhomer.de/messages";
+      var params =
+        "from=B2B Homer Website <postmaster@b2bhomer.de>&"+
+        "to=info@chairos.de&"+
+        "subject=testmail&"+
+        "text=Congratulations, you just got an email with form new B2B Homer landing page !  You are truly awesome!";
+      http.open("POST", url, true);
+      http.setRequestHeader(
+        "Authorization",
+        "Basic " +
+          base64.encode("api:pubkey-35a70bc8e9eb18b650a5be824df2abf5")
+      );
+      http.onload = function() {
+        console.log(this.responseText);
+      };
+      http.send(params);
+    }
 
 
 
