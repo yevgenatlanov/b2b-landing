@@ -1636,7 +1636,7 @@ p {
 }
 
 .pricing-style-fourteen  {
-  border: 1px solid var(--light-1);
+  /* border: 1px solid var(--light-1); */
   border-radius: 20px;
   background-color: var(--light-2);
   transition: all 0.4s ease;
