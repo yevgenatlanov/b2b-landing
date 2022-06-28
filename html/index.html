@@ -467,7 +467,7 @@
                 </div>
               </div>
             </div>
-            <form action="#" class="contact-form">
+            <form onsubmit="submitForm()" class="contact-form">
               <div class="row">
                 <div class="col-md-12">
                   <input type="text" name="Standort" id="Standort" placeholder="Standort *" required />
@@ -489,7 +489,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="button text-left rounded-buttons">
-                    <button type="submit" onClick="submitForm()" class="btn primary-btn rounded-full">
+                    <button type="submit" class="btn primary-btn rounded-full">
                       Absenden
                     </button>
                   </div>
@@ -816,24 +816,15 @@
 
 
     function submitForm() {
+      console.log('submit form');
       var http = new XMLHttpRequest();
-      var url =
-        "https://api.eu.mailgun.net/v3/b2bhomer.de/messages";
-      var params =
-        "from=B2B Homer Website <postmaster@b2bhomer.de>&"+
-        "to=info@chairos.de&"+
-        "subject=testmail&"+
-        "text=Congratulations, you just got an email with form new B2B Homer landing page !  You are truly awesome!";
-      http.open("POST", url, true);
-      http.setRequestHeader(
-        "Authorization",
-        "Basic " +
-          base64.encode("api:pubkey-35a70bc8e9eb18b650a5be824df2abf5")
-      );
+      var url = "http://localhost:8081/sendform";
+      http.open("POST", url);
+      console.log(http)
       http.onload = function() {
         console.log(this.responseText);
       };
-      http.send(params);
+
     }
 
 
