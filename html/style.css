@@ -2538,6 +2538,10 @@ p {
 
 }
 
+.contact-section .contact-item-wrapper .contact-item .form-success {
+  background: var(--primary);
+}
+
 .Datenschutz p {
   margin-bottom: 30px;
   color: var(--dark-1) ;
