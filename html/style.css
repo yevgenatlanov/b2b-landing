@@ -816,7 +816,7 @@ p {
 }
 @media (max-width: 767px) {
   .header-eight {
-    padding: 100px 0 60px 0;
+    padding: 50px 0;
   }
   
 }
@@ -1286,6 +1286,10 @@ p {
   .single-services {
     padding: 20px 20px 30px;
     margin-top: 20px;
+  }
+
+  .single-middle {
+    transform: none !important;
   }
 
   .single-services:hover {
