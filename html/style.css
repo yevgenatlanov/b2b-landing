@@ -488,6 +488,9 @@ p {
   background: white;
   opacity: 0.7;
 }
+.lang-button {
+  color: var(--primary)
+}
 
 .sticky .navbar {
   padding: 10px 0;
