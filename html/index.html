@@ -96,7 +96,7 @@
               <!-- navbar collapse -->
 
               <div class="navbar-btn d-none d-sm-inline-block">
-                <a href="https://stage.dev.b2bhomer.de/" class="btn primary-btn rounded-full">
+                <a href="https://app.b2bhomer.de/" class="btn primary-btn rounded-full">
                   Login
                 </a>
                 <a href="en.html" class="btn rounded-full lang-button">
@@ -126,7 +126,7 @@
               von möblierten Wohnungen.
             </p>
             <div class="button" style="margin-top: 65px; margin-bottom: 40px;">
-              <a href="https://stage.dev.b2bhomer.de/" class="btn primary-btn rounded-full">
+              <a href="https://app.b2bhomer.de/" class="btn primary-btn rounded-full">
                 Zum Vermieter Portal
               </a>
               <a href="#services">
@@ -476,12 +476,11 @@
             </div>
             <form id="contact-form" class="contact-form" method="post">
               <div class="row">
-                <input type="hidden" name="website" id="website" placeholder="B2B homer" />
                 <div class="col-md-12">
-                  <input type="text" name="Standort" id="Standort" placeholder="Standort *" required />
+                  <input type="text" name="location" id="location" placeholder="Standort *" required />
                 </div>
                 <div class="col-md-12">
-                  <input type="email" name="anzahlApartments" id="anzahlApartments" placeholder="Anzahl Apartments *"
+                  <input type="email" name="email" id="email" placeholder="E-mail *"
                     required />
                 </div>
 
@@ -492,6 +491,9 @@
                 <div class="col-md-12">
                   <input type="text" name="phone" id="phone" placeholder="Phone *" required />
                 </div>
+                
+                  <input type="hidden" name="website" id="website" value="b2bhomer.de" placeholder="b2bhomer.de" />
+                
 
               </div>
               <div class="row">
@@ -892,13 +894,13 @@
       const formDataDict = Object.fromEntries(new FormData(e.target).entries());
 
       var http = new XMLHttpRequest();
-      var url = "https://b2bh-back-dev-nfsyp7o4fa-ey.a.run.app/sendform";
+      var url = "http:/localhost:8081/sendform";
       http.open("POST", url, true);
       http.setRequestHeader('Content-Type', 'application/json');
       http.responseType = 'json';
       http.send(JSON.stringify(formDataDict));
 
-      console.log('get htpp response', http)
+      // console.log('get htpp response', http)
   
       http.onload = function () {
         if (http.status === 200) {

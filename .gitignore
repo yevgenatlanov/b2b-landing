@@ -6,6 +6,7 @@
 .pnp.js
 stats.js
 src/translations/translations-28sept2021.zip
+*.zip
 
 # testing
 /coverage
